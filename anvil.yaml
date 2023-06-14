@@ -1,0 +1,18 @@
+dependencies:
+- app_id: 7H7OG7H5VD7E3XKM
+  version: {dev: false}
+services:
+- source: /runtime/services/tables.yml
+  client_config: {}
+  server_config: {}
+package_name: Test_Selects_Ad
+allow_embedding: true
+name: Clone of Verdeler
+runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
+  server_spec: null}
+metadata: {title: Basic app to start, description: Clone this app to start a new app with navigation}
+startup_form: Home
+native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
+    rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
+db_schema: {}
+renamed: true
