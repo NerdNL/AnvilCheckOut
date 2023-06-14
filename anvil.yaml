@@ -1,13 +1,11 @@
-dependencies:
-- app_id: 7H7OG7H5VD7E3XKM
-  version: {dev: false}
+dependencies: []
 services:
 - source: /runtime/services/tables.yml
   client_config: {}
   server_config: {}
 package_name: Test_Selects_Ad
 allow_embedding: true
-name: Clone of Verdeler
+name: Basic app to start
 runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
   server_spec: null}
 metadata: {title: Basic app to start, description: Clone this app to start a new app with navigation}
