@@ -45,3 +45,8 @@ class Home(HomeTemplate):
     self.link_3.role = "selected" if link == "link_3" else None
     self.link_4.role = "selected" if link == "link_4" else None
 
+  def primary_color_1_click(self, **event_args):
+    """This method is called when the button is clicked"""
+    pass
+
+
