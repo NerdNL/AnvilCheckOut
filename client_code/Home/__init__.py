@@ -49,5 +49,5 @@ class Home(HomeTemplate):
     var = "variable"
     text = f"test {var}"
     x=Notification("nieuw",  style="danger", title="titel", timeout=6).show()
-    alert(text, title="TEST", role="submit")
+    alert(text,  title="TEST", role="submit")
     x.hide()
