@@ -46,7 +46,8 @@ class Home(HomeTemplate):
     self.link_4.role = "selected" if link == "link_4" else None
 
   def primary_color_1_click(self, **event_args):
-    """This method is called when the button is clicked"""
-    pass
-
-
+    var = "variable"
+    text = f"test {var}"
+    x=Notification("nieuw",  style="danger", title="titel", timeout=6).show()
+    alert(text, title="TEST", role="submit")
+    x.hide()
