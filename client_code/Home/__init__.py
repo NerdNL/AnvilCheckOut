@@ -8,6 +8,7 @@ import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
 from .. import data_access
+from anvil.js.window import navigator
 
 
 class Home(HomeTemplate):
@@ -51,3 +52,14 @@ class Home(HomeTemplate):
     x=Notification("nieuw",  style="danger", title="titel", timeout=6).show()
     alert(text,  title="TEST", role="submit")
     x.hide()
+
+  def button_klembord_click(self, **event_args):
+    print("CLIPBOARD CLICKED, niet werked in testomgeving, wel in run!")
+    navigator.clipboard.writeText(self.rich_text_1.content)
+
+  def link_home_click(self, **event_args):
+    """This method is called when the link is clicked"""
+    pass
+
+
+  
