@@ -32,6 +32,13 @@ components:
     properties: {height: 32, visible: true}
     name: spacer_1
     layout_properties: {grid_position: 'HSEGIY,HOQWEV'}
+  - type: RichText
+    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
+      foreground: '', visible: true, font_size: null, content: '**Rijke text**     Opgesteld
+        door *Ad*.  ', font: '', spacing_above: small, spacing_below: small, data: null,
+      background: '', format: markdown}
+    name: rich_text_1
+    layout_properties: {grid_position: 'NEUSQV,DDDSTP'}
 - type: FlowPanel
   properties: {}
   name: navbar_links
