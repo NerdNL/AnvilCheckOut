@@ -1,16 +1,14 @@
-dependencies: []
-services:
-- source: /runtime/services/tables.yml
-  client_config: {}
-  server_config: {}
-package_name: Test_Selects_Ad
 allow_embedding: true
-name: Basic app to start
-runtime_options: {version: 2, client_version: '3', server_version: python3-sandbox,
-  server_spec: null}
-metadata: {title: Basic app to start, description: Clone this app to start a new app with navigation}
-startup_form: Home
-native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap"
-    rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
 db_schema: {}
+dependencies: []
+metadata: {description: Clone this app to start a new app with navigation, title: Basic app to start}
+name: Basic app to start
+native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
+package_name: Test_Selects_Ad
 renamed: true
+runtime_options: {client_version: '3', server_spec: null, server_version: python3-sandbox, version: 2}
+services:
+- client_config: {}
+  server_config: {}
+  source: /runtime/services/tables.yml
+startup_form: Home

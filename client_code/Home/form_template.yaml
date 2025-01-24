@@ -1,98 +1,75 @@
-is_package: true
-container:
-  type: HtmlTemplate
-  properties: {tooltip: '', background: '', foreground: '', border: '', visible: true,
-    role: null, html: '@theme:standard-page.html'}
 components:
-- type: ColumnPanel
-  properties: {col_widths: '{"KGCART":10,"MPTZBG":41,"HIINHG":9,"DVMSKI":35,"HOQWEV":25}'}
-  name: content_panel
-  layout_properties: {slot: default}
-  components:
-  - name: primary_color_1
-    properties: {text: primary_color_1, role: primary-color, italic: false, icon: 'fa:anchor',
-      font_size: null, underline: true, visible: true, enabled: true}
-    type: Button
-    layout_properties: {grid_position: 'BCDHQK,KGCART'}
+- components:
+  - data_bindings: []
     event_bindings: {click: primary_color_1_click}
-    data_bindings: []
-  - name: date_picker_1
+    layout_properties: {grid_position: 'BCDHQK,KGCART'}
+    name: primary_color_1
+    properties: {enabled: true, font_size: null, icon: 'fa:anchor', italic: false, role: primary-color, text: primary_color_1, underline: true, visible: true}
+    type: Button
+  - layout_properties: {grid_position: 'BCDHQK,MPTZBG'}
+    name: date_picker_1
     properties: {}
     type: DatePicker
-    layout_properties: {grid_position: 'BCDHQK,MPTZBG'}
-  - name: button_1
+  - layout_properties: {grid_position: 'BCDHQK,HIINHG'}
+    name: button_1
     properties: {text: button_1}
     type: Button
-    layout_properties: {grid_position: 'BCDHQK,HIINHG'}
-  - type: Button
-    properties: {text: button_2, enabled: true}
+  - layout_properties: {grid_position: 'HSEGIY,DVMSKI'}
     name: button_2
-    layout_properties: {grid_position: 'HSEGIY,DVMSKI'}
-  - type: Spacer
-    properties: {height: 32, visible: true}
+    properties: {enabled: true, text: button_2}
+    type: Button
+  - layout_properties: {grid_position: 'HSEGIY,HOQWEV'}
     name: spacer_1
-    layout_properties: {grid_position: 'HSEGIY,HOQWEV'}
-  - type: RichText
-    properties: {role: null, align: left, tooltip: '', enable_slots: true, border: '',
-      foreground: '', visible: true, font_size: null, content: '**Rijke text**     Opgesteld
-        door *Ad*.  ', font: '', spacing_above: small, spacing_below: small, data: null,
-      background: '', format: markdown}
+    properties: {height: 32, visible: true}
+    type: Spacer
+  - layout_properties: {grid_position: 'NEUSQV,DDDSTP'}
     name: rich_text_1
-    layout_properties: {grid_position: 'NEUSQV,DDDSTP'}
-  - type: Button
-    properties: {role: null, align: center, tooltip: '', border: '', enabled: true,
-      foreground: '', visible: true, text: plakken, font_size: null, font: '', spacing_above: small,
-      icon_align: left, spacing_below: small, italic: false, background: '', bold: false,
-      underline: false, icon: ''}
-    name: button_klembord
+    properties: {align: left, background: '', border: '', content: '**Rijke text**     Opgesteld door *Ad*.  ', data: null, enable_slots: true, font: '', font_size: null, foreground: '', format: markdown, role: null, spacing_above: small, spacing_below: small, tooltip: '', visible: true}
+    type: RichText
+  - event_bindings: {click: button_klembord_click}
     layout_properties: {grid_position: 'EDIQRX,LAPFMC'}
-    event_bindings: {click: button_klembord_click}
-- type: FlowPanel
-  properties: {}
+    name: button_klembord
+    properties: {align: center, background: '', bold: false, border: '', enabled: true, font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: plakken, tooltip: '', underline: false, visible: true}
+    type: Button
+  layout_properties: {slot: default}
+  name: content_panel
+  properties: {col_widths: '{"KGCART":10,"MPTZBG":41,"HIINHG":9,"DVMSKI":35,"HOQWEV":25}'}
+  type: ColumnPanel
+- layout_properties: {slot: nav-right}
   name: navbar_links
-  layout_properties: {slot: nav-right}
-- type: ColumnPanel
-  properties: {col_widths: '{}'}
-  name: column_panel_1
-  layout_properties: {slot: left-nav}
-  components:
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Home, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
-      italic: false, background: '', bold: false, underline: false, icon: ''}
-    name: link_home
+  properties: {}
+  type: FlowPanel
+- components:
+  - event_bindings: {click: link_home_click}
     layout_properties: {grid_position: 'VOIGGM,FPBMTR'}
-    event_bindings: {click: link_home_click}
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Item 1, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
-      italic: false, background: '', bold: false, underline: false, icon: ''}
-    name: link_1
+    name: link_home
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Home, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  - event_bindings: {click: link_1_click}
     layout_properties: {grid_position: 'YMCDEX,VXSVWY'}
-    event_bindings: {click: link_1_click}
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Item 2, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
-      italic: false, background: '', bold: false, underline: false, icon: ''}
-    name: link_2
+    name: link_1
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Item 1, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  - event_bindings: {click: link_2_click}
     layout_properties: {grid_position: 'MNKHYO,LSSVIF'}
-    event_bindings: {click: link_2_click}
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Item 3, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
-      italic: false, background: '', bold: false, underline: false, icon: ''}
-    name: link_3
+    name: link_2
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Item 2, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  - event_bindings: {click: link_3_click}
     layout_properties: {grid_position: 'GBFKJC,XLGBLV'}
-    event_bindings: {click: link_3_click}
-  - type: Link
-    properties: {role: null, url: '', align: left, tooltip: '', border: '', foreground: '',
-      visible: true, text: Item4, font_size: null, wrap_on: mobile, font: '', col_spacing: medium,
-      spacing_above: small, icon_align: left, col_widths: '', spacing_below: small,
-      italic: false, background: '', bold: false, underline: false, icon: ''}
-    name: link_4
+    name: link_3
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Item 3, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  - event_bindings: {click: link_4_click}
     layout_properties: {grid_position: 'CYJLVC,KEOKBD'}
-    event_bindings: {click: link_4_click}
+    name: link_4
+    properties: {align: left, background: '', bold: false, border: '', col_spacing: medium, col_widths: '', font: '', font_size: null, foreground: '', icon: '', icon_align: left, italic: false, role: null, spacing_above: small, spacing_below: small, text: Item4, tooltip: '', underline: false, url: '', visible: true, wrap_on: mobile}
+    type: Link
+  layout_properties: {slot: left-nav}
+  name: column_panel_1
+  properties: {col_widths: '{}'}
+  type: ColumnPanel
+container:
+  properties: {background: '', border: '', foreground: '', html: '@theme:standard-page.html', role: null, tooltip: '', visible: true}
+  type: HtmlTemplate
+is_package: true

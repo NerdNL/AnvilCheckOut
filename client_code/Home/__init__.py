@@ -15,6 +15,7 @@ class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    self.home_content = self.content_panel
 
 
     # Any code you write here will run when the form opens.
@@ -23,7 +24,12 @@ class Home(HomeTemplate):
     print(">> homeform", cmpt)
     self.content_panel.clear()
     self.content_panel.add_component(cmpt)
-    
+
+  def link_home_click(self, **event_args):
+    self.set_active_link("link_home")
+    self.content_panel.clear()
+    #self.content_panel = self.home_content
+      
   def link_1_click(self, **event_args):
     self.set_active_link("link_1")
     self.load_component(FormItem1())
@@ -41,6 +47,7 @@ class Home(HomeTemplate):
     self.load_component(FormItem4())
 
   def set_active_link(self, link):
+    self.link_home.role = "selected" if link == "link_home" else None
     self.link_1.role = "selected" if link == "link_1" else None
     self.link_2.role = "selected" if link == "link_2" else None
     self.link_3.role = "selected" if link == "link_3" else None
@@ -57,9 +64,7 @@ class Home(HomeTemplate):
     print("CLIPBOARD CLICKED, niet werked in testomgeving, wel in run!")
     navigator.clipboard.writeText(self.rich_text_1.content)
 
-  def link_home_click(self, **event_args):
-    """This method is called when the link is clicked"""
-    pass
+
 
 
   
