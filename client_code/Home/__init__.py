@@ -15,7 +15,7 @@ class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
-    self.home_content = self.content_panel
+    self.home_content = self.content_panel.get_components()
 
 
     # Any code you write here will run when the form opens.
@@ -27,8 +27,9 @@ class Home(HomeTemplate):
 
   def link_home_click(self, **event_args):
     self.set_active_link("link_home")
-    self.content_panel.clear()
-    #self.content_panel = self.home_content
+    self.load_component(self.home_content)
+    #self.content_panel.clear()
+    #self.content_panel(self.home_content)
       
   def link_1_click(self, **event_args):
     self.set_active_link("link_1")
