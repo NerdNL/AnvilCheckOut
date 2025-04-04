@@ -6,7 +6,12 @@ name: Basic app to start
 native_deps: {head_html: '<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet" rel="preload" as="font" crossorigin="anonymous">'}
 package_name: Test_Selects_Ad
 renamed: true
-runtime_options: {client_version: '3', server_spec: null, server_version: python3-sandbox, version: 2}
+runtime_options:
+  client_version: '3'
+  legacy_features: {__dict__: true, bootstrap3: true, class_names: true, root_container: true}
+  server_spec: null
+  server_version: python3-sandbox
+  version: 3
 services:
 - client_config: {}
   server_config: {}
