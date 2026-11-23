@@ -5,6 +5,9 @@ import anvil.media
 from anvil_extras.logging import Logger, DEBUG
 logging = Logger(level=DEBUG, format="SERVER: {msg}")
 
+# Longest side (px) every uploaded image is scaled to before contour detection
+WORK_SIZE = 1000
+
 
 def _to_png_media(arr, name):
   # Lossless PNG keeps the black/white matrix exact and is far smaller than a nested list
@@ -23,6 +26,13 @@ def create_contour(file):
   logging.debug("create_contour")
   with anvil.media.TempFile(file) as filename:
     image = cv2.imread(filename)
+  # Normalise resolution: phones often upload a resized/re-encoded copy, and the
+  # pixel-based parameters below (blur, threshold block size, area) depend on scale.
+  h, w = image.shape[:2]
+  scale = WORK_SIZE / max(h, w)
+  image = cv2.resize(image, None, fx=scale, fy=scale,
+                     interpolation=cv2.INTER_AREA if scale < 1 else cv2.INTER_CUBIC)
+  logging.debug(f"original size {w}x{h}, resized to {image.shape[1]}x{image.shape[0]}")
   # grayed
   gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
   # make another thresh for contour
