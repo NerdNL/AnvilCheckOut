@@ -4,20 +4,22 @@ import anvil.server
 import anvil.tables as tables
 import anvil.tables.query as q
 from anvil.tables import app_tables
-from .. import data_access
 from anvil.js.window import navigator
+from anvil_extras import logging
 
 
 class Home(HomeTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
+    
 
   def link_home_click(self, **event_args):
     open_form('Home')
+    self.link_1_click()
   
   def link_1_click(self, **event_args):
-    open_form('FormItem1')
+    open_form('UploadForm')
 
   def link_2_click(self, **event_args):
     open_form('FormItem2')

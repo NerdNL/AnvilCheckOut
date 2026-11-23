@@ -1,9 +1,11 @@
-from ._anvil_designer import FormItem1Template
+from ._anvil_designer import UploadFormTemplate
 from anvil import *
 import anvil.server
-from .logging import logger, log_init, log_f
+from anvil_extras.logging import Logger, DEBUG
+logging = Logger(level=DEBUG, format="UPLOADFORM: {msg}")
 
-class FormItem1(FormItem1Template):
+
+class UploadForm(UploadFormTemplate):
   def __init__(self, **properties):
     # Set Form properties and Data Bindings.
     self.init_components(**properties)
@@ -17,6 +19,6 @@ class FormItem1(FormItem1Template):
 
   @handle("file_loader_1", "change")
   def file_loader_1_change(self, file, **event_args):
-    log_f.print("file_loader_1_change")  
+    logging.debug("file_loader_1_change")  
     mask = anvil.server.call('create_contour', file)
     self.image_1.source = mask

@@ -1,7 +1,21 @@
 import anvil.server
 import cv2
 import numpy as np
+import anvil.media
+from anvil_extras.logging import Logger, DEBUG
 logging = Logger(level=DEBUG, format="SERVER: {msg}")
+
+
+def _to_png_media(arr, name):
+  # Lossless PNG keeps the black/white matrix exact and is far smaller than a nested list
+  ok, buf = cv2.imencode(".png", arr)
+  if not ok:
+    raise ValueError(f"Could not encode {name} as PNG")
+  return anvil.BlobMedia("image/png", buf.tobytes(), name=name)
+
+
+def _from_png_media(media):
+  return cv2.imdecode(np.frombuffer(media.get_bytes(), np.uint8), cv2.IMREAD_GRAYSCALE)
 
 
 @anvil.server.callable
